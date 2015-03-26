@@ -4,10 +4,17 @@ ContactsApp.module('Views', function(Views, ContactsApp, Backbone, Marionette, $
         tagName: 'tr',
         events: {
             'click a.js-delete': 'deleteItem',
+            'click a.js-show': 'showItem'
         },
         deleteItem: function() {
             this.trigger('contact:delete', this.model);
-        }
+        },
+        remove: function() {
+            var self = this;
+            this.$el.fadeOut('slow', function() {
+                Marionette.ItemView.prototype.remove.call(self);
+            });
+        },
     });
 
     Views.List = Marionette.CompositeView.extend({
@@ -15,7 +22,7 @@ ContactsApp.module('Views', function(Views, ContactsApp, Backbone, Marionette, $
         // className : '',
         template: '#contact-list',
         childView: Views.Contact,
-        childViewContainer: 'tbody'
+        childViewContainer: 'tbody',
     });
 
     Views.ContactFormView = Marionette.ItemView.extend({

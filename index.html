@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link rel="stylesheet" href="/js/lib/foundation/css/normalize.css">
 	<link rel="stylesheet" href="/js/lib/foundation/css/foundation.css">
-	<link rel="stylesheet" href="/js/lib/foundation-icons/foundation_icons_general/stylesheets/general_foundicons.css">
+	<link rel="stylesheet" href="/js/lib/foundation-icon-fonts/foundation-icons.css">
 	<link rel="stylesheet" type="text/css" href="/js/lib/sweetalert/lib/sweet-alert.css">
 
-	<script src="/js/lib/modernizr/modernizr.js"></script>
+	<!-- <script src="/js/lib/modernizr/modernizr.js"></script> -->
 
 	<title>Mario</title>
 </head>
@@ -42,13 +42,17 @@
 	<script type="text/template" id="contact-item-view">
 		<td><%- firstName %></td>
 		<td><%- lastName %></td>
-		<td><a class="js-edit"><i class="right foundicon-edit"></i></a></td>
-		<td><a class="js-delete"><i class="right foundicon-trash"></i></a></td>
+		<td>
+			<a class="js-preview"><i class="fi-magnifying-glass"></i></a>
+			<a class="js-edit"><i class="fi-page-edit"></i></a>&nbsp;
+			<a class="js-delete"><i class="fi-trash"></i></a>&nbsp;
+		</td>
 	</script>
+
 
 	<script type="text/template" id="contact-list">
 		<thead>
-			<tr><th>First Name</th><th>Last Name</th><th></th><th></th></tr>
+			<tr><th>First Name</th><th>Last Name</th><th></th></tr>
 		</thead>
 		<tbody>
 		</tbody>
